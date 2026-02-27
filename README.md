@@ -1,8 +1,11 @@
 # OrShare
 
 OrShare 是一个使用 Go 开发、运行于 Linux 平台的 OEM/CN Share P2P 文件传输实现
+
 通过 BLE + Wi-Fi Direct 实现设备间直连传输，现已加入互传联盟
+
 连接 Wi-Fi Direct 时可能有重试，这是正常现象
+
 保存文件路径：用户下载文件夹/OrShare
 
 ---
