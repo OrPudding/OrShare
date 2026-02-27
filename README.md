@@ -1,7 +1,9 @@
 # OrShare
 
-OrShare 是一个使用 Go 开发、运行于 Linux 平台的 OEM/CN Share P2P 文件传输实现，  
-通过 BLE + Wi-Fi Direct 实现设备间直连传输。
+OrShare 是一个使用 Go 开发、运行于 Linux 平台的 OEM/CN Share P2P 文件传输实现
+通过 BLE + Wi-Fi Direct 实现设备间直连传输，现已加入互传联盟
+连接 Wi-Fi Direct 时可能有重试，这是正常现象
+保存文件路径：用户下载文件夹/OrShare
 
 ---
 
@@ -20,7 +22,9 @@ OrShare 是一个使用 Go 开发、运行于 Linux 平台的 OEM/CN Share P2P �
 - Linux
 - Go 1.20+
 - NetworkManager（需要 `nmcli`）
-- 支持 BLE（BlueZ）
+- BlueZ
+- 支持 Wi-Fi Direct 的 Wi-Fi 网卡
+- 支持 BLE 的蓝牙适配器
 
 ---
 
@@ -32,7 +36,7 @@ OrShare 是一个使用 Go 开发、运行于 Linux 平台的 OEM/CN Share P2P �
 | Android | 小米 13 Pro | HyperOS 3 | 可正常发现 Linux 并完成文件发送 |
 | Android | 小米 Pad 5 | HyperOS3 | 可正常发现 Linux 并完成文件发送 |
 
-> 注意：Linux 会被 Android 端识别为不定的随机品牌设备名称，不影响实际功能。
+> 注意：Linux 会被 Android 端识别为不定的随机品牌设备名称，不影响实际功能
 
 ---
 
@@ -87,22 +91,23 @@ go build -o orshare ./cmd/orshare
 
 ## 工作流程
 
-BLE  
-→ 接收 P2P 凭据（SSID / PSK / MAC / Port）  
+→ BLE 接收 P2P 凭据（SSID / PSK / MAC / Port）  
 → 连接 Wi-Fi Direct  
 → 解析对端 IP  
 → 启动接收器  
 
 ---
 
-## 协议参考
+## 协议来源
 
-本项目的协议实现参考了：
+本项目基于 CatShare 的协议与连接流程实现进行重写与适配
+属于其衍生实现
 
 CatShare  
 https://github.com/kmod-midori/CatShare
 
-感谢原作者的工作。
+原项目作者：Midori Kochiya  
+CatShare 使用 MIT License
 
 ---
 
