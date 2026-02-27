@@ -1,6 +1,6 @@
 # OrShare
 
-OrShare 是一个基于 Linux 的 OEM/CN Share P2P 文件传输实现，  
+OrShare 是一个使用 Go 开发、运行于 Linux 平台的 OEM/CN Share P2P 文件传输实现，  
 通过 BLE + Wi-Fi Direct 实现设备间直连传输。
 
 ---
@@ -21,6 +21,18 @@ OrShare 是一个基于 Linux 的 OEM/CN Share P2P 文件传输实现，
 - Go 1.20+
 - NetworkManager（需要 `nmcli`）
 - 支持 BLE（BlueZ）
+
+---
+
+## 测试环境
+
+| 平台 | 设备 | 系统版本 | 结果 |
+|------|------|----------|------|
+| Linux | Arch Linux | Rolling | 可发现附近的设备和接收文件 |
+| Android | 小米 13 Pro | HyperOS 3 | 可正常发现 Linux 并完成文件发送 |
+| Android | 小米 Pad 5 | HyperOS3 | 可正常发现 Linux 并完成文件发送 |
+
+> 注意：Linux 会被 Android 端识别为不定的随机品牌设备名称，不影响实际功能。
 
 ---
 
